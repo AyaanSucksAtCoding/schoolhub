@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init('mDG1HNIAVI3xy50CM');
+  })();
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - School Resources Hub</title>
@@ -285,19 +291,42 @@
                 </div>
 
                 <div class="contact-method">
-                    <h3>Location</h3>
-                    <p>Step School</p>
+                    <h3>Phone</h3>
+                    <p>
+                        +92 334 1234567<br>
+                        +92 334 7654321
+                    </p>
                 </div>
 
                 <div class="contact-method">
                     <h3>Social Media</h3>
-                    <p>Coming Soon</p>
-                    <script>
-                        const hamburger = document.querySelector('.hamburger');
-                        const navLinks = document.querySelector('.nav-links');
-                    
-                        hamburger.addEventListener('click', () => {
-                            navLinks.classList.toggle('active');
-                        });
-                    </script>
-                    
+                    <p>
+                        <a href="https://twitter.com/YourProfile" target="_blank">Twitter</a><br>
+                        <a href="https://facebook.com/YourProfile" target="_blank">Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_di5bge3', 'template_ql35l0n', this)
+      .then(function(response) {
+        console.log('Email sent!', response.status, response.text);
+        alert('Email sent successfully!');
+      }, function(error) {
+        console.error('Error sending email:', error);
+        alert('Oops! Something went wrong.');
+      });
+  });
+        });
+    </script>
+</body>
+</html>
