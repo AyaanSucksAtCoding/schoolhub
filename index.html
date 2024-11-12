@@ -42,8 +42,7 @@
         }
 
         .nav-links {
-            display: flex;
-            gap: 2.5rem;
+            display: flex;            gap: 2.5rem;
         }
 
         .nav-links a {
@@ -273,7 +272,12 @@
             navLinks.classList.toggle('active');
         });
 
-        function redirect(url) {
+/**
+ * Opens a specified URL in a new browser tab.
+ *
+ * @param {string} url - The URL to be opened in a new tab.
+ */
+        function openLinkInNewTab(url) {
             window.open(url, '_blank');
         }
     </script>
