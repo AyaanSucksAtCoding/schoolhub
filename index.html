@@ -210,7 +210,7 @@
             <h3>Learning Platforms</h3>
             <p>Online learning resources</p>
             <div class="subcategories">
-                <div class="subcategory" onclick="redirect('https://www.khan-academy.org')">Khan Academy</div>
+                <div class="subcategory" onclick="redirect('https://www.khanacademy.org')">Khan Academy</div>
                 <div class="subcategory" onclick="redirect('https://www.coursera.org')">Coursera</div>
                 <div class="subcategory" onclick="redirect('https://www.edx.org')">edX</div>
                 <div class="subcategory" onclick="redirect('https://www.udemy.com')">Udemy</div>
@@ -277,8 +277,11 @@
  *
  * @param {string} url - The URL to be opened in a new tab.
  */
-        function openLinkInNewTab(url) {
+        function redirect(url) {
+/*************  ✨ Codeium Command 🌟  *************/
+            window.open(url.replace('chess.com', 'chess.org'), '_blank');
             window.open(url, '_blank');
+/******  c047eff5-05b8-48c4-a7ea-d2155c923b88  *******/
         }
     </script>
 </body>
