@@ -292,4 +292,12 @@
                 <div class="contact-method">
                     <h3>Social Media</h3>
                     <p>Coming Soon</p>
+                    <script>
+                        const hamburger = document.querySelector('.hamburger');
+                        const navLinks = document.querySelector('.nav-links');
+                    
+                        hamburger.addEventListener('click', () => {
+                            navLinks.classList.toggle('active');
+                        });
+                    </script>
                     
