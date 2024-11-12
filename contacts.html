@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init('mDG1HNIAVI3xy50CM');
-  })();
-</script>
+    <script>
+      (function() {
+        emailjs.init('mDG1HNIAVI3xy50CM');
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - School Resources Hub</title>
@@ -257,7 +257,8 @@
             <h1>Contact Us</h1>
             <p>Have questions or suggestions? We'd love to hear from you!</p>
             
-            <form class="contact-form" action="#" method="POST">
+            <!-- Added id to the form -->
+            <form id="contact-form" class="contact-form" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -281,6 +282,7 @@
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
 
+            <!-- Contact info -->
             <div class="contact-info">
                 <div class="contact-method">
                     <h3>Email</h3>
@@ -315,18 +317,23 @@
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    emailjs.sendForm('service_di5bge3', 'template_ql35l0n', this)
-      .then(function(response) {
-        console.log('Email sent!', response.status, response.text);
-        alert('Email sent successfully!');
-      }, function(error) {
-        console.error('Error sending email:', error);
-        alert('Oops! Something went wrong.');
-      });
-  });
         });
+
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            emailjs.sendForm('service_di5bge3', 'template_ql35l0n', this)
+              .then(function(response) {
+                console.log('Email sent!', response.status, response.text);
+                alert('Email sent successfully!');
+              }, function(error) {
+                console.error('Error sending email:', error);
+                alert('Oops! Something went wrong.');
+              });
+        });
+
+        // Fix for 405 error
+        emailjs.init("mDG1HNIAVI3xy50CM");
     </script>
 </body>
 </html>
