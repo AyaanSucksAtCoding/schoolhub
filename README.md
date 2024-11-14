@@ -24,7 +24,7 @@ A comprehensive collection of AI tools, learning platforms, and productivity res
   - Pro version available for advanced features
 
 - **Claude**
-  - Academic-focused AI assistant
+  - Academics-focused AI assistant
   - Use for: Complex analysis, technical writing, research synthesis
   - Features: Long-form content, coding assistance, academic writing
   - Access: Free version with registration
